@@ -1,0 +1,17 @@
+name: generate-ascii
+on: [push]
+
+jobs:
+  ascii_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout Repo
+        uses: actions/checkout@v4
+
+      - name: List Repo Files
+        run: ls -ltra
+
+      - name: run the script
+        run: |
+          chmod +x ascii-script.sh
+          ./ascii-script.sh
